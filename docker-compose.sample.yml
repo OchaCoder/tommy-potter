@@ -1,0 +1,36 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - wordpress-data:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=your_user
+      - WORDPRESS_DB_PASSWORD=your_password
+      - WORDPRESS_DB_NAME=your_db_name
+    networks:
+      - tommy-potter-network
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=your_root_password
+      - MYSQL_DATABASE=your_db_name
+      - MYSQL_USER=your_user
+      - MYSQL_PASSWORD=your_password
+    networks:
+      - tommy-potter-network
+
+networks:
+  tommy-potter-network:
+    driver: bridge
+
+volumes:
+  wordpress-data:
+  mysql-data:
