@@ -22,7 +22,7 @@ export default function About() {
         </div>
 
         {/* Image Column */}
-        <motion.div className="flex justify-center" initial={{ opacity: 0, x: 80 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1.4, ease: "easeOut" }} viewport={{ once: true }}>
+        <motion.div className="flex justify-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 2, ease: "easeIn" }} viewport={{ once: true }}>
           <div className="aspect-[6/5] w-full max-w-[600px] relative">
             <Image src="/img/about-anne-nygard-sm.jpg" alt="Photo by Anne Nygard" fill sizes="900" className="object-cover object-center rounded-md shadow-md" priority />
           </div>
