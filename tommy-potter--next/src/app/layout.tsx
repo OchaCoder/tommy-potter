@@ -1,8 +1,3 @@
-// /app/layout.tsx
-import "@fontsource/kranky"
-import "@fontsource/ovo"
-// Supports weights 400-700
-import "@fontsource-variable/lora"
 // Supports weights 300-700
 import "@fontsource-variable/cormorant"
 import type { Metadata } from "next"

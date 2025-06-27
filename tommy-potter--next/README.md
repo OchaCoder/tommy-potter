@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tommy Potter — A Showcase Web App Built with Next.js & Headless WordPress
 
-## Getting Started
+This project is a quick showcase designed to demonstrate my ability to create visually appealing and responsive web applications.
 
-First, run the development server:
+I chose **Next.js** and **WordPress** based on their popularity and the maturity of their ecosystems.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- The app is built using **Next.js (App Router enabled)** to take advantage of its latest features.
+- **WordPress** is deployed on a VPS using **Docker Compose** and functions as a headless CMS.
+- **Tailwind CSS** is used for fast, utility-first styling with a clean and modern design.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🔗 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👉 [tommy-potter.ochacoder.com](https://tommy-potter.ochacoder.com)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Fully responsive layout
+- Smooth animations using **Framer Motion** for engaging user experience
+- Optimized image handling with `next/image`
+- Dynamic blog content fetched from the headless WordPress backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 🏺 Collection Section
 
-## Deploy on Vercel
+The `Collection` section utilizes `next/image` to optimize loading speed and applies smooth entry animations with Framer Motion.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 📰 Blog Section
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The `Blog` section dynamically fetches data from WordPress, including:
+
+- Slug
+- Featured Image
+- Title
+- Date
+- Excerpt
+- Content Body
+- Categories
+- Tags
+
+To keep things simple, only the essential data is displayed.
+
+#### 📬 Newsletter Section
+
+A placeholder `Newsletter` signup form is included at the bottom of the top page as a visual element.
+
+---
+
+### ⚡️ Performance
+
+According to **Google PageSpeed Insights** (mobile view):
+
+- **Performance**: 96
+- **Accessibility**: 90
+- **Best Practices**: 100
+- **SEO**: 100
+
+On desktop, the **Performance** score improves to **99**.
+
+---
