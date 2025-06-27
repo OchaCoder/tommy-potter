@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function ({ url, title, aTag }: { url: string; title: string; aTag: boolean }) {
+export default function MenuItem({ url, title, aTag }: { url: string; title: string; aTag: boolean }) {
   return (
     <>
       {aTag ? (

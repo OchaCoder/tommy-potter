@@ -37,7 +37,7 @@ type WPPreview = {
   date: string
 }
 
-export async function fetchWPPost(slug: string): Promise<
+async function fetchWPPost(slug: string): Promise<
   WPPost & {
     featuredImage?: WPMedia
     categoryList?: WPTerm[]
@@ -49,7 +49,7 @@ export async function fetchWPPost(slug: string): Promise<
   const base = process.env.NEXT_PUBLIC_WP
   const url = `${base}/posts?slug=${slug}`
   try {
-    const rawRes = await wretch(`${base}/posts?slug=${slug}`).get().json<WPPost[]>()
+    const rawRes = await wretch(url).get().json<WPPost[]>()
     if (!rawRes || rawRes.length === 0) {
       notFound()
     }
@@ -86,7 +86,7 @@ export async function fetchWPPost(slug: string): Promise<
   }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } | Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = await fetchWPPost(slug)
 
@@ -95,7 +95,7 @@ export async function generateMetadata({ params }: { params: { slug: string } | 
   }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = await fetchWPPost(slug)
 
